@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -92,11 +94,55 @@ break -> break out a loop
 continue -> : skip the current iteration
 
 while (condition){
-  
+
 }
 --------------------------------------------------
+F U N C T I O N S / M E T H O D S
+
+A function is a block of code that is reusable for do a certains task
+
+-VOID function- means that the functions returns nothing. I.e it execute just the block of code without returning anything
+
 
 */
+
+//  Basic function
+void great(){
+  print("Hello, Abdoul");
+}
+
+// function wwith parameters
+void greatPerson(String name){
+  print("Hello, " + name);
+}
+
+// functions with return type
+int add(int a, int b){
+  int sum = a+b;
+  return sum;
+}
+
+/*
+--------------------------------------------------
+D A T A  S T R U C T U R E S
+
+ */
+
+// List of strings
+List<String> names = ["Abdoul", "Kader", "Mike","Abdoul"];
+
+// SET : is a collection that record unique elements
+Set<String> uniqueNames = {"Abdoul", "Kader", "Mike"};
+
+//  MAP : stores key-value pairs
+
+Map user = {
+  'name': "Abdoul Kader",
+  'age' : 27,
+  'height' : 180,
+};
+// user['name'] -> "Abdoul Kader"
+// user['age'] -> 27
 
 
 class MyApp extends StatelessWidget {
@@ -104,21 +150,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+       print(user['name']);
 
-      for (var i = 0; i < 8; i++) {
-        if (i == 4){
-          continue;
-        }
-        print(i);
-      }
-
-      if (age > 18){
-        print("Your are adult");
-      } else {
-        print("Your are not adult");
-      }
-
-    return const MaterialApp(
+      return const MaterialApp(
       debugShowCheckedModeBanner: true,
       home: Scaffold(),
     );
