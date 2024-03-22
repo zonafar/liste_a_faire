@@ -15,21 +15,24 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.deepPurple[100],
+        appBar: AppBar(
+          title: Text("My  App Title", style: TextStyle(color: Colors.white),),
+          backgroundColor: Colors.deepPurple,
+          elevation: 0,
+          leading: Icon(Icons.menu, color: Colors.white),
+          actions: [IconButton(onPressed: (){}, icon: Icon(Icons.logout, color: Colors.white,))],
+        ),
         body: Center(
           child: Container(
             height: 300,
             width: 300,
             decoration: BoxDecoration(
-              color: Colors.deepPurple,
-              borderRadius: BorderRadius.circular(25),
-            ),
-            padding: EdgeInsets.all(25),
-            child: Text(
-              "Abdoul Kader",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold),
+                color: Colors.deepPurple,
+                borderRadius: BorderRadius.circular(25)),
+            child: Icon(
+              Icons.favorite,
+              color: Colors.white,
+              size: 65,
             ),
           ),
         ),
