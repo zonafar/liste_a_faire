@@ -16,14 +16,26 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         // backgroundColor: Colors.deepPurple[100],
-        body: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: ((context, index) => ListTile(
-            title: Text(names[index]),  
-            trailing: Icon(Icons.more_vert_rounded),
-            leading: CircleAvatar(backgroundColor: Colors.deepPurple,child: Text(index.toString()),),
-          )))
+        body: GridView.builder(
+          itemCount: 64,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+         itemBuilder: (context, index) => Container(
+          color: Colors.deepPurple,
+          margin: EdgeInsetsDirectional.all(2),
+          ),)  
       ),
     );
   }
 }
+
+/*
+ - gridView
+ - stack
+ - navigation {
+    nav bar
+    footer nav
+    back nav
+ }
+ - Counter app
+
+*/ 
