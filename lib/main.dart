@@ -11,20 +11,35 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> names = ["Alice", "Bob", "Charlie", "David", "Emma"];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // backgroundColor: Colors.deepPurple[100],
-        body: GridView.builder(
-          itemCount: 64,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-         itemBuilder: (context, index) => Container(
-          color: Colors.deepPurple,
-          margin: EdgeInsetsDirectional.all(2),
-          ),)  
-      ),
-    );
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            // large box
+            Container(
+              color: Colors.deepPurple,
+              width: 200,
+              height: 200,
+            ),
+            // medium box
+            Container(
+              color: Colors.deepPurple[200],
+              width: 100,
+              height: 100,
+            ),
+        
+            //  small box
+            Container(
+              color: Colors.deepPurple[100],
+              width: 50,
+              height: 50,
+            )
+          ],
+        ),
+      )
+      );
   }
 }
 
